@@ -1,6 +1,6 @@
 # myvue
 
-> \"maizuo\"
+> \"lagouwang\"
 
 ## Build Setup
 
