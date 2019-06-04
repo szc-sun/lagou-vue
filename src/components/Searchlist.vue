@@ -108,13 +108,16 @@ export default {
         this.msg2 = this.msg;
         console.log(333,this.msg,this.msg2,this.isShow)
         this.arr=[];
-        let params = {__t:Date.now(),city:"全国",positionName:this.msg2}; 
+        let params = {city:"全国",positionName:this.msg2,pageNo: 1,
+pageSize: 15}; 
         //let url = `http://localhost:9000/mz/v4/api/film/coming-soon`;
         let url = `http://localhost:9000/mz/search.json`;
         this.$http.get(url,{params}).then(res=>{ 
             this.arr = this.arr.concat(res.data.content.data.page.result);
             //this.arr = arr1;
             console.log(this.arr)
+        }).catch(err=>{
+          console.log(err)
         }); 
     }
 

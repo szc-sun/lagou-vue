@@ -5,13 +5,17 @@
             <img :src="'//www.lgstatic.com/'+item.companyLogo" class="item-logo"/>
             <div class="item-desc">
                 <h2 class="item-title">{{item.companyName}}</h2>
-                <p class="item-info">
-                    <span class="item-pos">
+                <div class="item-info">
+                  <span class="item-pos">
                        {{item.positionName}} [ {{item.city}} ]
-                    </span>
-                    <span class="item-salary">{{item.salary}}</span>
-                </p>
-                <p class="item-time">{{item.createTime}}</p>
+                  </span>   
+                </div>
+                <div>
+                  <span class="item-time">
+                    {{item.createTime}}
+                  </span>
+                  <span class="item-salary">{{item.salary}}</span>
+                </div>
             </div>
         </router-link>
             
@@ -101,7 +105,7 @@ ul {
     color: #333;
 }
 .list .item-title {
-    font-size: 16px;
+    font-size: 1rem;
     margin-bottom: 6px;
     width: 80%;
     overflow: hidden;
@@ -110,11 +114,19 @@ ul {
 }
 .list .item-info {
     width: 100%;
-    height: 15px;
-    line-height: 15px;
+    height: 1rem;
+    line-height: 1rem;
 }
+.list .item-info .item-pos {
+  display: inline-block;
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .list .item-salary {
-    font-size: 16px;
+    font-size: 1rem;
     color: #00b38a;
     float: right;
 }
